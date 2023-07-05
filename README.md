@@ -89,22 +89,15 @@ In order to ask a question, run a command like:
 python privateGPT.py
 ```
 
-And wait for the script to require your input.
+A server will start on port 5000. Use curl or similar
 
-```plaintext
-> Enter a query:
+```shell
+curl "http://localhost:5000/?query=What%20is%20the%20speed%20of%20light?"
 ```
 
-Hit enter. You'll need to wait 20-30 seconds (depending on your machine) while the LLM model consumes the prompt and prepares the answer. Once done, it will print the answer and the 4 sources it used as context from your documents; you can then ask another question without re-running the script, just wait for the prompt again.
+Or
 
-Note: you could turn off your internet connection, and the script inference would still work. No data gets out of your local environment.
-
-Type `exit` to finish the script.
-
-
-### CLI
-The script also supports optional command-line arguments to modify its behavior. You can see a full list of these arguments by running the command ```python privateGPT.py --help``` in your terminal.
-
+Go to ```http://localhost:5000/?query=Your%20question%20here```
 
 # How does it work?
 Selecting the right local models and the power of `LangChain` you can run the entire pipeline locally, without any data leaving your environment, and with reasonable performance.
